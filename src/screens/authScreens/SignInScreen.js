@@ -13,6 +13,7 @@ import {colors, parameters, title} from '../../global/Style';
 import * as Animatable from 'react-native-animatable';
 import {Icon, Button,SocialIcon} from 'react-native-elements';
 import Header from '../../component/Header';
+
 import {useState, useRef} from 'react';
 export default function SignInScreen({navigation}) {
   const [textInput2Focused, setTextInput2Focused] = useState(false);
@@ -72,7 +73,12 @@ export default function SignInScreen({navigation}) {
         </View>
       </View>
       <View style={{marginHorizontal:20,marginVertical:20}}>
-        <Button title="SIG IN" titleStyle={parameters.titleStyle}  buttonStyle={parameters.styleButton}/>
+        <Button title="SIG IN" titleStyle={parameters.titleStyle} 
+         buttonStyle={parameters.styleButton}
+        onPress={() => {
+          navigation.navigate('HomeScreen');
+        }}
+         />
       </View>
       
       <View style={{alignItems:"center" ,marginTop:10}}>
