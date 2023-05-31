@@ -14,14 +14,14 @@ import * as Animatable from 'react-native-animatable';
 import {Icon, Button,SocialIcon} from 'react-native-elements';
 import Header from '../../component/Header';
 import {useState, useRef} from 'react';
-export default function SignInScreen() {
+export default function SignInScreen({navigation}) {
   const [textInput2Focused, setTextInput2Focused] = useState(false);
   const textInput1Ref = useRef(1);
   const textInput2Ref = useRef(2);
 
   return (
     <View style={styles.conatiner}>
-      <Header title="My Contact" type="arrowleft" />
+      <Header title="My Contact" type="arrowleft" navigation={navigation} />
       <View style={{marginLeft: 20, marginTop: 10}}>
         <Text style={title}>Sig-In</Text>
       </View>

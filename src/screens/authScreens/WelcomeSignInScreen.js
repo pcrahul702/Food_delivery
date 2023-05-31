@@ -14,14 +14,14 @@ import {colors, parameters, title} from '../../global/Style';
 import * as Animatable from 'react-native-animatable';
 import {Icon, Button,SocialIcon} from 'react-native-elements';
 import Swiper from 'react-native-swiper';
+import { navigation} from '@react-navigation/native';
 
-
-export default function WelcomeSignInScreen() {
+export default function WelcomeSignInScreen({navigation}) {
   return (
     <View style={{flex:1}}>
          <View style={{flex:3,justifyContent:'center',alignItems:'center',padding:20}}>
-            <Text style={{fontSize:26,color:colors.buttons,fontweight:'bold'}}>DISCOVER RESTAURANTS</Text>
-            <Text style={{fontSize:26,color:colors.buttons,fontweight:'bold'}}>IN OUR AREA</Text>
+            <Text style={{color:colors.buttons,fontweight:'bold'}}>DISCOVER RESTAURANTS</Text>
+            <Text style={{color:colors.buttons,fontweight:'bold'}}>IN OUR AREA</Text>
         </View>
         <View style={{flex:4,justifyContent:'center' }}>
         <Swiper autoplay={true}>
@@ -49,7 +49,11 @@ export default function WelcomeSignInScreen() {
         </View>
         <View style={{flex:4,justifyContent:'flex-end'}}>
         <View style={{marginHorizontal:20,marginVertical:20 ,}}>
-        <Button title="SIG IN" titleStyle={parameters.titleStyle}  buttonStyle={parameters.styleButton}/>
+        <Button title="SIG IN" titleStyle={parameters.titleStyle} 
+        onPress={() => {
+          navigation.navigate('SignInScreen');
+        }}
+         buttonStyle={parameters.styleButton}/>
       </View>
       <View style={{ marginHorizontal:20,marginBottom:20}}>
       <Button title="Create Account" titleStyle={styles.createButtontitle}  buttonStyle={styles.createButton}/>

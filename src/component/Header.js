@@ -3,7 +3,7 @@ import { View,Text,StyleSheet,Dimensions } from "react-native"
 import {colors,parameters} from "../global/Style"
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Icon } from "react-native-elements";
-const Header = ({title,type}) => {
+const Header = ({title,type,navigation}) => {
     return (
         <View style={styles.header}>
            <View>
@@ -12,7 +12,9 @@ const Header = ({title,type}) => {
                 name={type}
                 color={colors.headertext}
                 size={30}
-                onPress={() => {}}
+                onPress={() => {
+                    navigation.goBack();
+                }}
             />
            
            </View>
